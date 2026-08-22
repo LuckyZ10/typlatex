@@ -1,171 +1,97 @@
-# Typlatex v3.0 — Typora 双栏 A4 LaTeX 风格主题家族
+# Typlatex
 
-> 名字 = Typora + LaTeX。在 Typora 中获得接近 LaTeX 双栏论文的排版效果：
+**Typora 的 LaTeX 风格主题家族 —— 写 Markdown，得到排版好的期刊论文。**
 
-## 样式总览（六款全览）
+[English docs](README.md) · [主题画廊投稿](https://theme.typora.io/) · Typora ≥ 1.6 · MIT
 
-同一份文档在六个主题下的渲染效果：
+![typlatex-ink](screenshots/typlatex-ink.png)
 
-| 主题 | 栏式 | 装修 | 预览 |
-|------|------|------|------|
-| `typlatex` | 双栏·期刊 | 朴素 | ![typlatex](screenshots/typlatex.png) |
-| `typlatex-book` | 双栏·书式 | 朴素 | ![typlatex-book](screenshots/typlatex-book.png) |
-| `typlatex-ink` | 双栏·期刊 | 墨青 | ![typlatex-ink](screenshots/typlatex-ink.png) |
-| `typlatex-book-ink` | 双栏·书式 | 墨青 | ![typlatex-book-ink](screenshots/typlatex-book-ink.png) |
-| `typlatex-article` | 单栏传统 | 朴素 | ![typlatex-article](screenshots/typlatex-article.png) |
-| `typlatex-article-ink` | 单栏传统 | 墨青 | ![typlatex-article-ink](screenshots/typlatex-article-ink.png) |
+文档渲染在 **A4 白纸卡片**上：**双栏两端对齐**、衬线正文、LaTeX 式首行缩进、
+**三线表**、图片**自动跨栏**、蓝色居中图注——一键导出真正的 **A4 双栏 PDF**。
 
-## 主题家族
+---
 
-| 文件 | 主题名（菜单里显示） | 适用 |
-|------|--------------------|------|
-| `typlatex.css` | typlatex | 标准版（期刊式）：双栏连续排版，栏目填满为止 |
-| `typlatex-book.css` | typlatex-book | 书式版：H2 章节标题通栏跨双栏，每章从新的一组双栏顶部开始，节奏像"章" |
-| `typlatex-ink.css` | typlatex-ink | 墨青装修版：复刻风 H2（深黑灰标签右下大圆角嵌浅灰轨道）+ 珊瑚红加粗 |
-| `typlatex-book-ink.css` | typlatex-book-ink | 书式 + 墨青装修：通栏 H2 也用复刻风标签 |
-| `typlatex-article.css` | typlatex-article | 单栏传统版：LaTeX article 风，小四字号、行距 1.6、通栏排版 |
-| `typlatex-article-ink.css` | typlatex-article-ink | 单栏 + 墨青装修：复刻风 H2，灰轨补齐至内容区右缘 |
+## 选你的版本
 
-六个主题的排版规则完全一致（图注、表格、公式等），三个维度的组合：
-栏数节奏（期刊连续 / 书式通栏 / 单栏传统）× 装修（朴素 / 墨青）。
-随时在「主题」菜单里切换对比。单栏版中无栏可跨，跨栏触发规则
-（`---`、`span.full` 等）自然失效，其余规则照常生效。
+| | 朴素 | 墨青 |
+|---|---|---|
+| **期刊式** — 双栏连续排版 | [`typlatex`](screenshots/typlatex.png) | [`typlatex-ink`](screenshots/typlatex-ink.png) |
+| **书式** — H2 通栏、每章起新双栏组 | [`typlatex-book`](screenshots/typlatex-book.png) | [`typlatex-book-ink`](screenshots/typlatex-book-ink.png) |
+| **单栏传统** — 12pt、行距 1.6 | [`typlatex-article`](screenshots/typlatex-article.png) | [`typlatex-article-ink`](screenshots/typlatex-article-ink.png) |
 
-> "墨青"取名：深黑灰标签如墨色钤印，珊瑚红加粗如朱批，配衬线正文
-> 呈"墨 + 朱"的书写意象。"article"对应 LaTeX 单栏文档类。
+**朴素**版标题克制、纯排版感；**墨青**版的 H2 是"右下大圆角深黑灰标签嵌浅灰
+轨道"，加粗文字珊瑚红。上面六张截图是**同一份文档**——随时在「主题」菜单切换。
 
-- 屏幕上以 **A4 白纸卡片**预览，正文**双栏**、两端对齐、首行缩进
-- **单独成段的图片自动跨双栏居中**；与文字同行的图片留在栏内
-- 表格默认留在栏内（三线表 booktabs 风格），**前面加 `---` 即跨栏**；代码块与公式留在栏内
-- h1 作为文章标题（跨栏居中）；**标题不自动编号**，编号直接写在标题文字里
-- `@page` 已声明 A4，导出 PDF 即为 A4 双栏
+<details>
+<summary><b>六款完整预览</b></summary>
+
+| 主题 | 预览 |
+|------|------|
+| `typlatex` | ![typlatex](screenshots/typlatex.png) |
+| `typlatex-book` | ![typlatex-book](screenshots/typlatex-book.png) |
+| `typlatex-ink` | ![typlatex-ink](screenshots/typlatex-ink.png) |
+| `typlatex-book-ink` | ![typlatex-book-ink](screenshots/typlatex-book-ink.png) |
+| `typlatex-article` | ![typlatex-article](screenshots/typlatex-article.png) |
+| `typlatex-article-ink` | ![typlatex-article-ink](screenshots/typlatex-article-ink.png) |
+
+</details>
 
 ## 安装
 
-1. Typora → 文件 → 偏好设置 → 外观 → 打开主题文件夹
-   （本机路径：`C:\Users\onesc\AppData\Roaming\Typora\themes`）
-2. 把 `typlatex.css` 复制进去（本项目已复制好）
-3. 重启 Typora，在菜单「主题」中选择 **Typlatex**
+1. 下载并解压本仓库
+2. Typora → 文件 → 偏好设置 → 外观 → 打开主题文件夹
+3. 把想要的 `.css` 复制进去
+4. 重启 Typora，在「主题」菜单选择
 
-## 导出 PDF
+> 使用行内公式 `$…$` 需在 偏好设置 → Markdown 勾选「内联公式」。
 
-文件 → 导出 → PDF。CSS 中已通过 `@page` 声明：
+## 功能速览
 
-```
-size: A4;  margin: 16mm 16mm 18mm;
-```
+**图片与图注**：图片单独成段自动跨双栏（相当于 `figure*`）；行内图留在栏内。
+图片后紧跟的整行斜体（空不空行都行）自动变成蓝色居中图注，跟随图片的跨栏行为。
 
-导出对话框中页边距保持「默认」即可应用上述边距；若你手动改了边距，
-需同步修改 `typlatex.css` 顶部的 `--page-width` / `--page-margin`，
-并建议同时勾选「打印背景」以保留代码块底色。
-
-## 图片：跨栏 vs 单栏
-
-| 写法 | 效果 |
-|------|------|
-| `![](fig.png)` 单独一段 | 跨双栏居中（相当于 LaTeX `figure*`） |
-| `文字 ![](fig.png) 文字` 同一行 | 留在栏内，随文字排布 |
-| `<p class="nospan"><img src="fig.png"></p>` | 强制单栏显示的大图 |
-| `<p class="span">…</p>` | 强制任意段落跨栏 |
-
-调整图片大小：右键图片 → 缩放，或用 HTML 块
-`<p class="nospan"><img src="fig.png" style="width:90%"></p>`。
-
-### 图注（蓝色）
-
-两种写法，效果相同（蓝色、居中、跟随图片的跨栏行为）：
-
-**空行写法**：图片单独成段，空一行后接整段斜体：
-
-```markdown
-![](fig.png)
-
-*图 1.9　人脸的变化可由约 42 块肌肉（$\approx$ 42 个数）描述。*
-```
-
-**连写**：图片下一行直接接整行斜体（同一段落，不空行）：
-
-```markdown
-![](fig.png)
-*图 1.9　人脸的变化可由约 42 块肌肉（$\approx$ 42 个数）描述。*
-```
-
-跨栏图的图注跟着跨栏；`nospan` 栏内图的图注留在栏内。图注颜色在
-CSS 顶部 `--caption-color` 修改。
-
-> 连写的一个已知边界：同一段里"文字 + 行内图 + 回车 + 整行斜体"
-> 会被误判为图+图注（跨栏并变蓝）。图片或图注单独成段即可避免。
-
-### 行内公式
-
-`$...$` 行内公式需在 Typora 中开启：偏好设置 → Markdown → 勾选
-「内联公式」，然后重新打开文档。主题已适配 MathJax/KaTeX 的行内与
-独立公式（行内公式不做裁剪）。
-
-独立 `$$` 公式块默认**留在栏内**；想让某个公式跨双栏，在它上面放
-一条 `---` 分隔线即可（公式跨栏居中，分隔线显示为淡淡通栏细线）。
-长公式内部换行仍用 `aligned` + `\\` 手动断行。
-
-> 提示：跨栏元素会把当前位置上方的双栏"封底"，因此大图最好放在
-> 两个自然段之间，避免栏底出现大片留白（LaTeX 的浮动定位 CSS 做不到）。
-
-### 让任意段落跨双栏（`---` 分隔线 或 段首隐形标记）
-
-想在双栏正文里插一段跨双栏的文字（致谢、说明、宽段落……），有两种写法：
-
-**写法一：`---` 分隔线**（会显示一条淡淡的通栏细线）
-
-对**段落、`$$` 公式块、表格**都有效——放在谁的上一行，谁就跨双栏：
+**用 `---` 触发跨栏**：分隔线是隐形的跨栏指令，下一块内容——段落、`$$` 公式、
+表格——横跨双栏：
 
 ```markdown
 ---
 
-这一段会跨双栏显示，前后仍是双栏文字。
+$$
+\begin{aligned}
+f(x) &= a+b+c+d+e \\
+     &= g+h
+\end{aligned}
+$$
 ```
 
-**写法二：段首隐形标记**（不显示任何线，标记本身不可见）
+长公式用 `aligned` + `\\` + `&` 手动断行；独立公式居中显示、不裁剪。
 
-```markdown
-<span class="full"></span>这一段会跨双栏显示，其后照常写 Markdown。
-```
+**表格**：三线表（booktabs 风格），默认栏内 8.5pt；上一行放 `---` 即跨栏 9pt。
 
-注意：标记必须和正文在**同一段落内**（同一行，标记在最前面），
-单独占一行是无效的。若 Typora 把标签显示成原始文字，检查
-偏好设置 → Markdown →「解析原始 HTML」是否开启。
+**标题**：H1 是文章标题（跨栏居中）；不自动编号——直接写 `## 1. 引言`，
+或取消 CSS 末尾注释块的注释恢复自动编号。
 
-注意：CSS 跨栏是逐块的，没有"从这里到那里整节跨栏"的区间语义——
-连续多段跨栏时，每段前都要加一条 `---` 或一个标记。
+## 自定义参数
 
-两个硬限制，提前说明免得踩坑：
+每份 CSS 顶部的 `:root` 块：
 
-- **`---` 的上一行必须空行**。否则上面那行文字会被 Markdown 解析成
-  setext 二级标题（`文字` + `---` 等于 `## 文字`），分隔线消失。
-- **空行不能当触发器**。`---`（或标题）后面有没有空行，渲染出的
-  DOM 完全相同，CSS 无法区分——所以不存在"不空行单栏、空行跨栏"
-  的行为。`---` 后面空不空行都会触发，效果一样。
+| 变量 | 默认值 | 含义 |
+|------|--------|------|
+| `--page-width` | `178mm` | A4 内容宽 |
+| `--page-margin` | `16mm` | 屏幕与打印边距 |
+| `--col-gap` | `7mm` | 栏间距 |
+| `--font-size` | `10.5pt` | 正文字号（单栏版 12pt） |
+| `--para-indent` | `2em` | 首行缩进（改 `0` 取消） |
+| `--caption-color` | `#0b53c2` | 图注颜色 |
 
-分隔线默认**隐身**（编辑和导出都不显示线，`---` 纯粹当触发器，
-增删改去源码模式操作）。想恢复淡淡的通栏线，删掉 CSS 里
-`#write > hr, #write .md-hr > hr { display: none }` 这条规则。
-脚注区的分隔线不受影响，始终保留。
+墨青版的标题几何（#212122 / #FBFBFB、35pt 圆角）在 CSS 中以 `装修` 注释标出。
 
-## 其他约定
+## 使用须知
 
-- **标题编号**：默认不自动编号，编号写在标题文字里（`## 1. 引言`、
-  `### 1.1 方法`）。想恢复 CSS 自动编号（1 / 1.1 / 1.1.1），取消
-  `typlatex.css` 末尾注释块的注释即可。
-- **表格**：默认留在栏内（8.5pt）；表格上一行放 `---` 即跨栏并
-  放大到 9pt。对两个主题（typlatex / typlatex-book）都生效。
-- **窗口较窄**时（<980px）自动退回单栏，便于编辑；导出不受影响。
-- **首行缩进**：正文段落默认缩进 2 字符（LaTeX 习惯）。不想要就把
-  `typlatex.css` 顶部的 `--para-indent` 改为 `0`。注意：与文字同行的
-  图片会跟随所在段落的首行缩进，属正常现象；想完全避免缩进，把图片
-  单独成段（跨栏）或用 `<p class="nospan">`（栏内居中不缩进）。
-- **栏间分隔线**：默认关闭，取消 `#write` 中 `column-rule` 一行的注释即可。
-- 常用参数都集中在 `typlatex.css` 顶部的 `:root` 变量里
-  （字号、行距、栏间距、页边距、颜色）。
+- `---` **上方**必须空一行，否则上一行会被 Markdown 解析成 setext 二级标题
+- 跨栏元素会重排上方两栏，大图/大表放在自然段边界处效果最好
+- 空行无法当触发器：`---\nX` 与 `---\n\nX` 渲染结果相同，任何主题都无法区分
 
-## 文件
+## 许可
 
-- `typlatex.css` — 主题本体
-- `demo.md` — 效果演示文档（含公式、图片、表格、代码），用本主题打开预览
+[MIT](LICENSE) — © 2026 LuckyZ10
