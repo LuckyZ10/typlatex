@@ -1,6 +1,19 @@
-# Typlatex v1.0 — Typora 双栏 A4 LaTeX 风格主题
+# Typlatex v3.0 — Typora 双栏 A4 LaTeX 风格主题家族
 
 > 名字 = Typora + LaTeX。在 Typora 中获得接近 LaTeX 双栏论文的排版效果：
+
+## 样式总览（六款全览）
+
+同一份文档在六个主题下的渲染效果：
+
+| 主题 | 栏式 | 装修 | 预览 |
+|------|------|------|------|
+| `typlatex` | 双栏·期刊 | 朴素 | ![typlatex](screenshots/typlatex.png) |
+| `typlatex-book` | 双栏·书式 | 朴素 | ![typlatex-book](screenshots/typlatex-book.png) |
+| `typlatex-ink` | 双栏·期刊 | 墨青 | ![typlatex-ink](screenshots/typlatex-ink.png) |
+| `typlatex-book-ink` | 双栏·书式 | 墨青 | ![typlatex-book-ink](screenshots/typlatex-book-ink.png) |
+| `typlatex-article` | 单栏传统 | 朴素 | ![typlatex-article](screenshots/typlatex-article.png) |
+| `typlatex-article-ink` | 单栏传统 | 墨青 | ![typlatex-article-ink](screenshots/typlatex-article-ink.png) |
 
 ## 主题家族
 

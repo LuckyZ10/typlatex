@@ -9,6 +9,19 @@ captions — and exports to a true A4 two-column PDF.
 
 [中文文档（详细）](README.zh-CN.md) | [Gallery post](https://theme.typora.io/)
 
+## Style gallery — all six variants
+
+The same document, rendered under each theme:
+
+| Theme | Column rhythm | Look | Preview |
+|-------|---------------|------|---------|
+| `typlatex` | Two-column, journal | Plain | ![typlatex](screenshots/typlatex.png) |
+| `typlatex-book` | Two-column, book (H2 spans page) | Plain | ![typlatex-book](screenshots/typlatex-book.png) |
+| `typlatex-ink` | Two-column, journal | Ink | ![typlatex-ink](screenshots/typlatex-ink.png) |
+| `typlatex-book-ink` | Two-column, book | Ink | ![typlatex-book-ink](screenshots/typlatex-book-ink.png) |
+| `typlatex-article` | Single column (12pt / 1.6) | Plain | ![typlatex-article](screenshots/typlatex-article.png) |
+| `typlatex-article-ink` | Single column | Ink | ![typlatex-article-ink](screenshots/typlatex-article-ink.png) |
+
 ## The theme family (6 variants)
 
 Two dimensions — column rhythm × look:
