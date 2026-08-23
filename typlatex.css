@@ -434,21 +434,22 @@ body {
 }
 
 
-/* ---- 行内公式 justify 空隙修复（双分支）----
-   根因：Typora 在行内公式两侧插入零宽空格(U+200B)，两端对齐时
-   拉伸全部集中在该处，公式前出现 20-30% 行宽的空白。
-   新内核（Chromium ≥120）：inter-character 把拉伸摊到字符间；
-   旧内核（Typora 内置 Chromium <120，不支持 text-justify）：
-   含行内公式的段落退化为左对齐，右缘不齐但无空隙。 */
-@supports (text-justify: inter-character) {
-  #write { text-justify: inter-character; }
+/* ---- 行内公式空隙修复 ----
+   根因：Typora 把行内公式外层设为 display:inline-block，公式成为
+   不可断行的刚体岛，加上两侧零宽空格与隐藏 $ 定界符的占位，
+   换行机制被扰乱，公式前出现大块空隙。
+   修复：外层改回 inline（公式本身仍是整体），并让 $ 定界符
+   不占宽度。公式跟随文字自然流动，空隙消失。 */
+#write .md-inline-math {
+  display: inline !important;
 }
-@supports not (text-justify: inter-character) {
-  #write p:has(.md-inline-math),
-  #write p:has(mjx-container),
-  #write p:has(.katex) {
-    text-align: start;
-  }
+#write .md-inline-math .md-meta,
+#write .md-math-after-sym {
+  display: none !important;
+}
+/* 编辑态（md-expand，光标进入公式时）保持 Typora 原生行为 */
+#write .md-inline-math.md-expand {
+  display: inline !important;
 }
 
 /* ---------------- 数学公式 ---------------- */
