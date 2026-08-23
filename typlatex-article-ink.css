@@ -82,6 +82,9 @@ body {
   font-size: var(--font-size);
   line-height: var(--line-height);
   text-align: justify;
+  /* 行内公式两侧的零宽空格(U+200B)在 justify 下会被拉成大空隙，
+     inter-character 把拉伸摊到每个字符间，空隙几乎不可见 */
+  text-justify: inter-character;
   hyphens: auto;
   orphans: 2;
   widows: 2;

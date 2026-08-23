@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>inline math gap repro</title>
+<link rel="stylesheet" href="typlatex-article.css">
+<style>
+  body { margin: 0; }
+  /* 候选修复：按字符分配 justify 拉伸 */
+  #write { text-justify: inter-character; }
+  /* 模拟 Typora 的行内公式 DOM：span.md-inline-math 内嵌 mjx-container */
+  .md-inline-math { -webkit-user-select: none; }
+  mjx-container {
+    display: inline-block;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div id="write">
+  <p>复现测试甲：行内公式带零宽空格（&#8203;<span class="md-inline-math"><mjx-container>η = η<sub>0</sub>·exp(−E<sub>a</sub>/kT)</mjx-container></span>&#8203;）写在一段足够长的中文里，观察公式前面是否出现大块空白，此处继续填充文字使断行恰好落在公式附近，两端对齐会把空隙拉开，填充填充填充填充填充填充填充填充。</p>
+  <p>复现测试乙：对照组，同样的公式但不带零宽空格（<span class="md-inline-math"><mjx-container>η = η<sub>0</sub>·exp(−E<sub>a</sub>/kT)</mjx-container></span>）写在同样长度的中文里，观察空白是否明显更小，此处继续填充文字使断行位置接近，填充填充填充填充填充填充填充填充。</p>
+</div>
+</body>
+</html>
