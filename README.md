@@ -91,7 +91,8 @@ Everything lives in the `:root` block at the top of each CSS file:
 | `--page-margin` | `16mm` | Screen & print margins |
 | `--col-gap` | `7mm` | Column gap |
 | `--font-size` | `10.5pt` | Body size (12pt in article themes) |
-| `--para-indent` | `2em` | First-line indent (`0` disables) |
+| `--para-indent` | `0em` | First-line indent (set `2em` + `--para-gap: 0` for LaTeX style) |
+| `--para-gap` | `0.55em` | Paragraph spacing (separates paragraphs when not indenting) |
 | `--caption-color` | `#0b53c2` | Caption color |
 
 Ink heading geometry (colors `#212122`/`#FBFBFB`, 35pt corner radius) is

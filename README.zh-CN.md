@@ -81,7 +81,8 @@ $$
 | `--page-margin` | `16mm` | 屏幕与打印边距 |
 | `--col-gap` | `7mm` | 栏间距 |
 | `--font-size` | `10.5pt` | 正文字号（单栏版 12pt） |
-| `--para-indent` | `2em` | 首行缩进（改 `0` 取消） |
+| `--para-indent` | `0em` | 首行缩进（恢复 LaTeX 风格改 `2em` 并把段间距设 0） |
+| `--para-gap` | `0.55em` | 段间距（不缩进时区分段落用） |
 | `--caption-color` | `#0b53c2` | 图注颜色 |
 
 墨青版的标题几何（#212122 / #FBFBFB、35pt 圆角）在 CSS 中以 `装修` 注释标出。
