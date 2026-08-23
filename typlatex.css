@@ -200,16 +200,24 @@ body {
 /* ---------------- 图注：紧跟图片、空一行的斜体段落 ----------------
    写法：图片单独成段，空一行后接 *图注文字*（整段斜体）→ 蓝色居中。
    跨栏图的图注同样跨栏；nospan 栏内图的图注留在栏内。 */
+/* 图注判定兼容两种结构：
+   - 整段只有一个 em（纯斜体图注）
+   - 以 em 开头（图注含 [n] 引用标号时，Typora 会把斜体从方括号
+     处拆开，段落变成 em + 括号span + 文字 的序列） */
 #write p:has(> img:only-child) + p:has(> em:only-child),
 #write p:has(> span.md-image:only-child) + p:has(> em:only-child),
-#write p:has(> a:only-child > img:only-child) + p:has(> em:only-child) {
+#write p:has(> a:only-child > img:only-child) + p:has(> em:only-child),
+#write p:has(> img:only-child) + p:has(> em:first-child),
+#write p:has(> span.md-image:only-child) + p:has(> em:first-child),
+#write p:has(> a:only-child > img:only-child) + p:has(> em:first-child) {
   column-span: all;
   color: var(--caption-color);
   text-align: center;
   text-indent: 0;
   margin: 0 0 3mm;
 }
-#write p.nospan + p:has(> em:only-child) {
+#write p.nospan + p:has(> em:only-child),
+#write p.nospan + p:has(> em:first-child) {
   color: var(--caption-color);
   text-align: center;
   text-indent: 0;
