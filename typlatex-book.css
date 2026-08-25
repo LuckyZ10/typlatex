@@ -43,11 +43,12 @@
 
   /* Typora 界面配色 */
   --bg-color: #ffffff;
-  --side-bar-bg-color: #26292d;
-  --side-bar-text-color: #b9bcc0;
-  --control-text-color: #6b6b6b;
-  --active-file-bg-color: #3a3e43;
-  --active-file-text-color: #ffffff;
+  --side-bar-bg-color: #f6f8fa;
+  --side-bar-text-color: #1f2328;
+  --control-text-color: #656d76;
+  --active-file-bg-color: #ddf4ff;
+  --active-file-text-color: #0969da;
+  --item-hover-bg-color: #eaeef2;
   --select-text-bg-color: rgba(11, 83, 194, 0.18);
   --search-select-bg-color: #ffe08a;
   --meta-content-color: #6b6b6b;
