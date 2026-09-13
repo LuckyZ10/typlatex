@@ -19,7 +19,7 @@
    【图注】
    · 图片下方空一行的整段斜体 → 蓝色居中图注（--caption-color 可改）
    【导出】
-   · @page 已声明 A4（上下 10mm、左右 16mm），
+   · @page 已声明 A4（顶部 16mm、左右 16mm、底部 18mm），
      导出 PDF 时页边距保持「默认」即可
    【兼容】
    · 需 Typora ≥ 1.6（依赖 CSS :has()）；已在 1.14.9 实测
@@ -561,7 +561,7 @@ body {
 
 @page {
   size: A4;
-  margin: 10mm 16mm;
+  margin: 16mm 16mm 18mm;
   background: #ffffff;
 }
 

@@ -18,7 +18,7 @@ centered captions — and export to a true **A4 two-column PDF** with one click.
 
 - **GitHub-style responsive width** — the reading area starts at `860px` and
   expands to `1024px`/`1200px` on 1400/1800px-wide screens; export stays true
-  A4 with 10mm vertical and 16mm horizontal page margins.
+  A4 with the original 16mm top/side and 18mm bottom page margins.
 - **`---` is a layout command** — the horizontal rule is repurposed as an
   invisible *span trigger*: whatever comes next crosses both columns.
   See [The `---` span command](#--the-span-command).
