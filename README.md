@@ -10,14 +10,15 @@
 
 ![typlatex-ink](screenshots/typlatex-ink.png)
 
-Documents render on an **A4 paper card**: justified two-column serif text,
+Documents render on a responsive **paper card**: justified two-column serif text,
 booktabs three-line tables, figures that span columns automatically, blue
 centered captions — and export to a true **A4 two-column PDF** with one click.
 
 ## Highlights
 
-- **A4 two-column layout** — justified serif columns on a paper card; true A4
-  page margins on export.
+- **GitHub-style responsive width** — the reading area starts at `860px` and
+  expands to `1024px`/`1200px` on 1400/1800px-wide screens; export stays true
+  A4 with 20mm vertical and 16mm horizontal page margins.
 - **`---` is a layout command** — the horizontal rule is repurposed as an
   invisible *span trigger*: whatever comes next crosses both columns.
   See [The `---` span command](#--the-span-command).
@@ -125,12 +126,15 @@ Everything lives in the `:root` block at the top of each CSS file:
 | Variable | Default | Meaning |
 |----------|---------|---------|
 | `--page-width` | `178mm` | A4 content width |
-| `--page-margin` | `16mm` | Screen & print margins |
+| `--page-margin` | `16mm` | Paper-card inset and PDF horizontal margins |
+| `--preview-width` | `860px` | On-screen reading width (expanded at wide-screen breakpoints) |
 | `--col-gap` | `7mm` | Column gap |
 | `--font-size` | `10.5pt` | Body size (12 pt in article themes) |
 | `--para-indent` | `0em` | First-line indent (set `2em` + `--para-gap: 0` for LaTeX style) |
 | `--para-gap` | `0.55em` | Paragraph spacing (separates paragraphs when not indenting) |
 | `--caption-color` | `#0b53c2` | Caption color |
+| `--paper-color` | `#ffffff` | Paper-card and PDF page background |
+| `--canvas-color` | `#e8e6e1` | On-screen background outside the paper card |
 
 Ink heading geometry (colors `#212122`/`#FBFBFB`, 35 pt corner radius) is
 marked with a `装修` comment in the Ink themes.

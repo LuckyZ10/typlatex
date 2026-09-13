@@ -22,7 +22,7 @@
    【图注】
    · 图片下方空一行的整段斜体 → 蓝色居中图注（--caption-color 可改）
    【导出】
-   · @page 已声明 A4（页边距 16mm/16mm/18mm），
+   · @page 已声明 A4（上下 20mm、左右 16mm），
      导出 PDF 时页边距保持「默认」即可
    【兼容】
    · 需 Typora ≥ 1.6（依赖 CSS :has()）；已在 1.14.9 实测
@@ -31,7 +31,9 @@
 /* ---------------- 可调参数 ---------------- */
 :root {
   --page-width: 178mm;      /* A4(210mm) − 左右边距(16mm×2) */
-  --page-margin: 16mm;      /* 页边距（屏幕预览与 @page 一致） */
+  --page-margin: 16mm;      /* 屏幕卡片内边距与 PDF 左右页边距 */
+  --preview-width: 860px;   /* 屏幕阅读宽度；宽屏下与 Typora GitHub 主题同步放大 */
+  --content-width: calc(var(--preview-width) - var(--page-margin) * 2);
   --col-gap: 7mm;           /* 双栏间距 */
   --font-size: 10.5pt;      /* 正文字号（五号） */
   --line-height: 1.45;
@@ -43,6 +45,8 @@
   --caption-color: #0b53c2;  /* 图注（紧跟图片的斜体段落）颜色 */
   --code-bg: #f5f4f0;
   --border-color: #b9b5ae;
+  --paper-color: #ffffff;
+  --canvas-color: #e8e6e1;
 
   /* Typora 界面配色 */
   --bg-color: #ffffff;
@@ -64,20 +68,21 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: "Times New Roman", "Noto Serif SC", "Source Han Serif SC",
                "SimSun", "Songti SC", serif;
   color: var(--text-color);
-  background: #e8e6e1;           /* 纸张外的桌面底色 */
+  background: var(--canvas-color); /* 纸张外的桌面底色 */
   -webkit-font-smoothing: antialiased;
 }
 
 /* ---------------- A4 纸张 + 双栏 ---------------- */
 #write {
-  max-width: calc(var(--page-width) + var(--page-margin) * 2); /* = 210mm */
+  max-width: var(--preview-width);
   box-sizing: border-box;
   margin: 28px auto 60px;
   padding: calc(var(--page-margin) + 4mm) var(--page-margin) 20mm;
-  background: #ffffff;
+  background: var(--paper-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16);
   border-radius: 2px;
 
@@ -94,11 +99,22 @@ body {
   widows: 2;
 }
 
+/* 与 Typora GitHub 主题一致：屏幕越宽，阅读区逐级放大。 */
+@media screen and (min-width: 1400px) {
+  :root { --preview-width: 1024px; }
+}
+
+@media screen and (min-width: 1800px) {
+  :root { --preview-width: 1200px; }
+}
+
 /* 窗口太窄时退回单栏，方便编辑 */
 @media screen and (max-width: 980px) {
+  :root { --content-width: calc(min(100vw - 32px, var(--preview-width)) - 20mm); }
   #write {
     column-count: 1;
-    max-width: calc(var(--page-width) + 24mm);
+    width: calc(100% - 32px);
+    max-width: var(--preview-width);
     padding: 8mm 10mm 16mm;
   }
 }
@@ -171,7 +187,7 @@ body {
   top: 0;
   bottom: 0;
   left: calc(100% - 35pt);
-  width: max(0pt, calc(178mm - 100% + 35pt));
+  width: max(0pt, calc(var(--content-width) - 100% + 35pt));
   background: #fbfbfb;
   z-index: -2;
 }
@@ -555,14 +571,15 @@ body {
 
 /* ---------------- 打印 / 导出 PDF ---------------- */
 @media print {
+  :root { --content-width: var(--page-width); }
   html, body {
-    background: #ffffff;
+    background: var(--paper-color);
   }
   #write {
     max-width: none;
     margin: 0;
     padding: 0;
-    background: none;
+    background: var(--paper-color);
     box-shadow: none;
     border-radius: 0;
   }
@@ -578,7 +595,8 @@ body {
 
 @page {
   size: A4;
-  margin: 16mm 16mm 18mm;
+  margin: 20mm 16mm;
+  background: #ffffff;
 }
 
 /* ==============================================================
