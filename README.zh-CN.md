@@ -124,7 +124,7 @@ $$
 | `--para-gap` | `0.55em` | 段间距（不缩进时区分段落用） |
 | `--caption-color` | `#0b53c2` | 图注颜色 |
 | `--paper-color` | `#ffffff` | 屏幕纸张与 PDF 页面的背景色 |
-| `--canvas-color` | `#e8e6e1` | 屏幕上纸张外的桌面底色 |
+| `--canvas-color` | `#ffffff` | 屏幕上纸张外的编辑画布颜色 |
 
 墨青版的标题几何（#212122 / #FBFBFB、35pt 圆角）在 CSS 中以 `装修`
 注释标出。

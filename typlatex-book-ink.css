@@ -46,7 +46,7 @@
   --code-bg: #f5f4f0;
   --border-color: #b9b5ae;
   --paper-color: #ffffff;
-  --canvas-color: #e8e6e1;
+  --canvas-color: #ffffff;
 
   /* Typora 界面配色 */
   --bg-color: #ffffff;
@@ -77,7 +77,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* 桌面灰只用于 Typora 编辑画布，避免根背景渗入 PDF 页边距。 */
+/* 编辑画布单独设色，避免根背景渗入 PDF 页边距。 */
 @media screen {
   body > content {
     background: var(--canvas-color);

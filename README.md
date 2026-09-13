@@ -134,7 +134,7 @@ Everything lives in the `:root` block at the top of each CSS file:
 | `--para-gap` | `0.55em` | Paragraph spacing (separates paragraphs when not indenting) |
 | `--caption-color` | `#0b53c2` | Caption color |
 | `--paper-color` | `#ffffff` | Paper-card and PDF page background |
-| `--canvas-color` | `#e8e6e1` | On-screen background outside the paper card |
+| `--canvas-color` | `#ffffff` | On-screen canvas outside the paper card |
 
 Ink heading geometry (colors `#212122`/`#FBFBFB`, 35 pt corner radius) is
 marked with a `装修` comment in the Ink themes.
