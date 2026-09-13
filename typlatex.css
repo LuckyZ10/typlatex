@@ -12,7 +12,7 @@
    【图注】
    · 图片下方空一行的整段斜体 → 蓝色居中图注（--caption-color 可改）
    【导出】
-   · @page 已声明 A4（上下 20mm、左右 16mm），
+   · @page 已声明 A4（上下 10mm、左右 16mm），
      导出 PDF 时页边距保持「默认」即可
    【兼容】
    · 需 Typora ≥ 1.6（依赖 CSS :has()）；已在 1.14.9 实测
@@ -54,6 +54,7 @@
 /* ---------------- 基础 ---------------- */
 html {
   font-size: 14px;
+  background: var(--paper-color);
 }
 
 body {
@@ -61,8 +62,15 @@ body {
   font-family: "Times New Roman", "Noto Serif SC", "Source Han Serif SC",
                "SimSun", "Songti SC", serif;
   color: var(--text-color);
-  background: var(--canvas-color); /* 纸张外的桌面底色 */
+  background: var(--paper-color);
   -webkit-font-smoothing: antialiased;
+}
+
+/* 桌面灰只用于 Typora 编辑画布，避免根背景渗入 PDF 页边距。 */
+@media screen {
+  body > content {
+    background: var(--canvas-color);
+  }
 }
 
 /* ---------------- A4 纸张 + 双栏 ---------------- */
@@ -545,7 +553,7 @@ body {
 
 @page {
   size: A4;
-  margin: 20mm 16mm;
+  margin: 10mm 16mm;
   background: #ffffff;
 }
 
